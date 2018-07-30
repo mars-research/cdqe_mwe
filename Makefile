@@ -1,10 +1,12 @@
 all: foo
 
+CC:=gcc
+#CFLAGS=-m32
 LIBS:= -lpthread
-#CFLAGS:= -Wall
+CFLAGS:= -Wall
 
 foo: main.o foo.o
-	gcc -o foo main.o foo.o $(LIBS) $(CFLAGS)
+	$(CC) -o foo main.o foo.o $(LIBS) $(CFLAGS)
 
 clean:
 	@rm -f foo
